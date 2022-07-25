@@ -9,7 +9,7 @@ int main()
     //Creating a window using raylib
     InitWindow(width, height, "Axe Game Window");
     
-    while (true)
+    while (WindowShouldClose() == false)
     {
         BeginDrawing();
         ClearBackground(RED);
