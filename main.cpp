@@ -3,7 +3,16 @@
 
 int main()
 {
+    int width = 350;
+    int height = 200;
+
     //Creating a window using raylib
-    InitWindow(350, 200, "Axe Game Window");
-    return 0;
+    InitWindow(width, height, "Axe Game Window");
+    
+    while (true)
+    {
+        BeginDrawing();
+        ClearBackground(RED);
+        EndDrawing();
+    }
 }
