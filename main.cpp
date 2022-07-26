@@ -25,19 +25,19 @@ int main()
 
         DrawCircle(circle_x, circle_y, 25, BLUE);
 
-        if (IsKeyDown(KEY_D))
+        if (IsKeyDown(KEY_D) && circle_x < width)
         {
             circle_x = circle_x + 10;
         }
-        else if (IsKeyDown(KEY_A))
+        else if (IsKeyDown(KEY_A) && circle_x > 0)
         {
             circle_x = circle_x - 10;
         }
-        else if (IsKeyDown(KEY_W))
+        else if (IsKeyDown(KEY_W) && circle_y > 0)
         {
             circle_y = circle_y - 10;
         }
-        else if (IsKeyDown(KEY_X))
+        else if (IsKeyDown(KEY_X) && circle_y < height)
         {
             circle_y = circle_y + 10;
         }
