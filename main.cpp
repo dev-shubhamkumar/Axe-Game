@@ -4,15 +4,15 @@
 int main()
 {
     // Window dimension
-    int width = 350;
-    int height = 200;
+    int width = 700;
+    int height = 400;
 
     //Using Braced Initialization
     bool checker{false};
 
     //Circle Coordinates
-    int circle_x{175};
-    int circle_y{100};
+    int circle_x{width/2};
+    int circle_y{height/2};
 
     //Creating a window using raylib
     InitWindow(width, height, "Axe Game Window");
@@ -31,9 +31,16 @@ int main()
         }
         else if (IsKeyDown(KEY_A))
         {
+            circle_x = circle_x - 10;
+        }
+        else if (IsKeyDown(KEY_W))
+        {
             circle_y = circle_y - 10;
         }
-        
+        else if (IsKeyDown(KEY_X))
+        {
+            circle_y = circle_y + 10;
+        }
 
         EndDrawing();
     }
