@@ -24,6 +24,7 @@ int main()
         ClearBackground(WHITE);
 
         DrawCircle(circle_x, circle_y, 25, BLUE);
+        DrawCircle(circle_x, circle_y, 20, WHITE);
 
         if (IsKeyDown(KEY_D) && circle_x < width)
         {
