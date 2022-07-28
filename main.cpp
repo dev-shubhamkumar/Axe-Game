@@ -18,6 +18,8 @@ int main()
     int axe_x{400};
     int axe_y{0};
 
+    int direction{10};
+
     //Creating a window using raylib
     InitWindow(width, height, "Axe Game Window");
     
@@ -31,7 +33,11 @@ int main()
         DrawCircle(circle_x, circle_y, 20, WHITE);
 
         DrawRectangle(axe_x, axe_y, 50, 50, RED);
-        axe_y += 10;
+        axe_y += direction;
+        if(axe_y > height || axe_y < 0)
+        {
+            direction = -direction;
+        }
 
         if (IsKeyDown(KEY_D) && circle_x < width)
         {
