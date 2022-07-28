@@ -4,8 +4,8 @@
 int main()
 {
     // Window dimension
-    int width = 700;
-    int height = 400;
+    int width = 800;
+    int height = 450;
 
     //Using Braced Initialization
     bool checker{false};
@@ -13,6 +13,10 @@ int main()
     //Circle Coordinates
     int circle_x{width/2};
     int circle_y{height/2};
+
+    //Rectangle Coordinates
+    int axe_x{400};
+    int axe_y{0};
 
     //Creating a window using raylib
     InitWindow(width, height, "Axe Game Window");
@@ -25,6 +29,9 @@ int main()
 
         DrawCircle(circle_x, circle_y, 25, BLUE);
         DrawCircle(circle_x, circle_y, 20, WHITE);
+
+        DrawRectangle(axe_x, axe_y, 50, 50, RED);
+        axe_y += 10;
 
         if (IsKeyDown(KEY_D) && circle_x < width)
         {
