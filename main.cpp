@@ -33,6 +33,9 @@ int main()
 
     int direction{10};
 
+    //Logic for collision
+    bool collision_with_axe{true};
+
     //Creating a window using raylib
     InitWindow(width, height, "Axe Game Window");
     
@@ -42,33 +45,39 @@ int main()
         BeginDrawing();
         ClearBackground(WHITE);
 
-        DrawCircle(circle_x, circle_y, circle_radius, BLUE);
-        DrawCircle(circle_x, circle_y, circle_radius_inner, WHITE);
-
-        DrawRectangle(axe_x, axe_y, axe_length, axe_length, RED);
-        axe_y += direction;
-        if(axe_y > height || axe_y < 0)
+        if (collision_with_axe)
         {
-            direction = -direction;
+            DrawText("Game Over", 400, 200, 20, RED);
         }
-
-        if (IsKeyDown(KEY_D) && circle_x < width)
+        else 
         {
-            circle_x = circle_x + 10;
-        }
-        else if (IsKeyDown(KEY_A) && circle_x > 0)
-        {
-            circle_x = circle_x - 10;
-        }
-        // else if (IsKeyDown(KEY_W) && circle_y > 0)
-        // {
-        //     circle_y = circle_y - 10;
-        // }
-        // else if (IsKeyDown(KEY_X) && circle_y < height)
-        // {
-        //     circle_y = circle_y + 10;
-        // }
+            DrawCircle(circle_x, circle_y, circle_radius, BLUE);
+            DrawCircle(circle_x, circle_y, circle_radius_inner, WHITE);
 
+            DrawRectangle(axe_x, axe_y, axe_length, axe_length, RED);
+            axe_y += direction;
+            if(axe_y > height || axe_y < 0)
+            {
+                direction = -direction;
+            }
+
+            if (IsKeyDown(KEY_D) && circle_x < width)
+            {
+                circle_x = circle_x + 10;
+            }
+            else if (IsKeyDown(KEY_A) && circle_x > 0)
+            {
+                circle_x = circle_x - 10;
+            }
+            // else if (IsKeyDown(KEY_W) && circle_y > 0)
+            // {
+            //     circle_y = circle_y - 10;
+            // }
+            // else if (IsKeyDown(KEY_X) && circle_y < height)
+            // {
+            //     circle_y = circle_y + 10;
+            // }
+        }
         EndDrawing();
     }
 }
